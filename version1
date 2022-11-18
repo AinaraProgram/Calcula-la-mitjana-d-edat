@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(M6) Exercici 2</title>
+</head>
+
+<body style="background-color: rgba(228, 46, 204, 0.351);">
+
+    <style>
+        #cos {
+            background-color: rgb(195, 172, 184);
+            width: 1000px;
+            height: auto;
+            margin-left: 240px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+
+    <div id="cos">
+
+        <h1 style="background-color: rgba(188, 48, 158, 0.568); text-align: center;">Calcula la mitjana d'edat.
+        </h1>
+        <p style="background-color:rgb(221, 150, 187)">
+            Aquest programa calcula l'edat mitjana d'un número de persones introduït per teclat. <br>
+
+            S'ha de crear una funció que s'encarregui de demanar les edats a l'usuari/ària i de calcular l'edat mitjana. <br>
+            
+            La funció rebrà per paràmetre el núm. de persones a qui ha de demanar l'edat. <br>
+            L'edat de les persones només serà vàlida si està compresa entre 0 i 120 anys. <br>
+            La mitjana de les edats introduïdes s'ha de retornar per la funció (return). <br>
+        <hr>
+
+
+
+        <div style="background-color: rgb(155, 154, 154); width: fit-content; padding: 15px;">
+            <p>Número de persones (per calcular la mitjana de les seves edats): <br><input type="number" id="numPersones" placeholder="Ex: 3"></p>
+            
+            <button onclick="main()" style="background-color: rgb(187, 0, 255); width: fit-content;">Comprova</button>
+            <p><u><b>Resultat: <br></b></u></p>
+            
+            <div style="background-color: rgba(215, 132, 197, 0.568); width: fit-content;">
+                <p id="resposta"></p>
+            </div>
+        </div>
+
+        <script>
+
+            let persones;
+            let edat = 0; //personasUsuario
+            let mitjana = []; //personasArray
+            let suma = 0;
+            let operacio = 0;
+            let resultat;
+
+            
+            function main(){
+                
+                persones = Math.abs(parseInt(document.getElementById("numPersones").value));
+                
+                for (let i = 0; i < persones; i++){ //3
+                    edat = prompt("Introdueix una edat: " , (i+1), "");
+                    if(edat >= 0 && edat <=120){
+                        console.log(edat);
+                        mitjana.push(edat);// 20 + 40 + 50
+                        //i++;
+                        suma += edat;//mitjana = [20, 30, 40]  suma = suma + mitjana     suma = 0 + 
+                    } else {
+                        alert("Error! L'edat ha de ser entre 0 i 120.")
+                    }
+                }
+                calcula(edat);
+                        document.getElementById("resposta").innerHTML = "La mitjana de les edats emprades és: " + resultat;
+            }
+
+            function calcula(edat){    
+                
+                
+                
+                console.log(mitjana);
+
+                mitjana = suma/persones;
+
+                //escrit.join("+") + "=" + resultado
+
+                        //suma += mitjana;
+                        console.log(suma);
+
+                        
+                        resultat = (operacio/persones);
+                        return resultat;
+                
+            } 
+
+        </script>
+
+
+        
+                
+</body>
+</html>
